@@ -16,6 +16,7 @@ repositories {
 
 ```groovy
 dependencies {
+    implementation 'com.karumi:dexter:6.2.1'
     implementation 'com.github.prongbang:dexter-permissions-utility:1.1.0'
 }
 ```
@@ -25,7 +26,16 @@ dependencies {
 - Check permission allowed
 
 ```kotlin
-permissionUtility.isCameraGranted(object : PermissionsChecker {
+private val permissionsUtility: PermissionsUtility by lazy {
+    DexterPermissionsUtility(
+            Dexter.withContext(this),
+            SingleCheckPermissionListenerImpl(),
+            MultipleCheckPermissionsListenerImpl(),
+            PermissionsCheckerListenerImpl(this)
+    )
+}
+
+permissionsUtility.isCameraGranted(object : PermissionsChecker {
     override fun onGranted() {
 
     }
@@ -33,13 +43,13 @@ permissionUtility.isCameraGranted(object : PermissionsChecker {
     override fun onNotGranted() {
 
     }
-}))
+})
 ```
 
 - Require example permission
 
 ```kotlin
-permissionUtility.checkCameraGranted(object : PermissionsGranted() {
+permissionsUtility.checkCameraGranted(object : PermissionsGranted() {
     override fun onGranted() {
 
     }
