@@ -16,8 +16,8 @@ repositories {
 
 ```groovy
 dependencies {
-    implementation 'com.karumi:dexter:6.2.1'
-    implementation 'com.github.prongbang:dexter-permissions-utility:1.1.0'
+    implementation 'com.karumi:dexter:6.2.3'
+    implementation 'com.github.prongbang:dexter-permissions-utility:1.1.2'
 }
 ```
 
