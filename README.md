@@ -2,6 +2,8 @@
 
 Easy use dexter permission for android
 
+[![](https://jitpack.io/v/prongbang/dexter-permissions-utility.svg)](https://jitpack.io/#prongbang/dexter-permissions-utility)
+
 ## Installation
 
 - Add the following repositories to your project/build.gradle file.
